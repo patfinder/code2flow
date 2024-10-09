@@ -84,6 +84,7 @@ def _resolve_str_variable(variable, file_groups):
 
 
 class BaseLanguage(abc.ABC):
+    # TODO: fix comment below to not limiting the list of supported languages to below list.
     """
     Languages are individual implementations for different dynamic languages.
     This is the superclass of Python, Javascript, PHP, and Ruby.
@@ -92,6 +93,7 @@ class BaseLanguage(abc.ABC):
     Note that the 'Tree' type is generic and will be a different
     type for different languages. In Python, it is an ast.AST.
     """
+    language = 'UNKNOWN'
 
     @staticmethod
     @abc.abstractmethod
@@ -99,7 +101,7 @@ class BaseLanguage(abc.ABC):
         """
         :rtype: None
         """
-
+    
     @staticmethod
     @abc.abstractmethod
     def get_tree(filename, lang_params):
@@ -140,6 +142,14 @@ class BaseLanguage(abc.ABC):
         """
         :param tree Tree:
         :param parent Group:
+        :rtype: Group
+        """
+    
+    @staticmethod
+    @abc.abstractmethod
+    def file_import_tokens(filename):
+        """
+        :param filename str:
         :rtype: Group
         """
 

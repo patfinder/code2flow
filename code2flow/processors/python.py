@@ -2,7 +2,7 @@ import ast
 import logging
 import os
 
-from .model import (OWNER_CONST, GROUP_TYPE, Group, Node, Call, Variable,
+from ..model import (OWNER_CONST, GROUP_TYPE, Group, Node, Call, Variable,
                     BaseLanguage, djoin)
 
 

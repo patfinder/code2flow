@@ -1,7 +1,7 @@
 import json
 import subprocess
 
-from .model import (Group, Node, Call, Variable, BaseLanguage,
+from ..model import (Group, Node, Call, Variable, BaseLanguage,
                     OWNER_CONST, GROUP_TYPE, is_installed, flatten)
 
 
