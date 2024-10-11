@@ -7,11 +7,9 @@ import subprocess
 import sys
 import time
 
-# TODO: plugin
-from .processors.python import Python
-from .processors.javascript import Javascript
-from .processors.ruby import Ruby
-from .processors.php import PHP
+from code2flow.language import get_extensions, language_from_extension
+from code2flow.loader import load_processor
+
 from .model import (TRUNK_COLOR, LEAF_COLOR, NODE_COLOR, GROUP_TYPE, OWNER_CONST,
                     Edge, Group, Node, Variable, is_installed, flatten)
 
@@ -38,15 +36,6 @@ LEGEND = """subgraph legend{
         </table></td></tr></table>
         >];
 }""" % (NODE_COLOR, TRUNK_COLOR, LEAF_COLOR)
-
-# TODO: plugin
-LANGUAGES = {
-    'py': Python,
-    'js': Javascript,
-    'mjs': Javascript,
-    'rb': Ruby,
-    'php': PHP,
-}
 
 
 class LanguageParams():
@@ -276,7 +265,7 @@ def determine_language(individual_files):
     """
     for source, _ in individual_files:
         suffix = source.rsplit('.', 1)[-1]
-        if suffix in LANGUAGES:
+        if suffix in get_extensions():
             logging.info("Implicitly detected language as %r.", suffix)
             return suffix
     raise AssertionError(f"Language could not be detected from input {individual_files}. ",
@@ -342,7 +331,7 @@ def make_file_group(tree, filename, extension):
 
     :rtype: Group
     """
-    language = LANGUAGES[extension]
+    language = load_processor(language_from_extension(extension))
 
     subgroup_trees, node_trees, body_trees = language.separate_namespaces(tree)
     group_type = GROUP_TYPE.FILE
@@ -457,7 +446,7 @@ def map_it(sources, extension, no_trimming, exclude_namespaces, exclude_function
     :rtype: (list[Group], list[Node], list[Edge])
     '''
 
-    language = LANGUAGES[extension]
+    language = load_processor(language_from_extension(extension))
 
     # 0. Assert dependencies
     language.assert_dependencies()

@@ -244,6 +244,9 @@ def get_acorn_version():
 
 
 class Javascript(BaseLanguage):
+    language = 'javascript'
+    extension = 'js'
+
     @staticmethod
     def assert_dependencies():
         """Assert that acorn is installed and the correct version"""

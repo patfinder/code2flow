@@ -192,6 +192,9 @@ def get_inherits(tree, body_tree):
 
 
 class Ruby(BaseLanguage):
+    language = 'ruby'
+    extension = 'rb'
+
     @staticmethod
     def assert_dependencies():
         """Assert that ruby-parse is installed"""

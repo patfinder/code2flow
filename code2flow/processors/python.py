@@ -141,6 +141,9 @@ def get_inherits(tree):
 
 
 class Python(BaseLanguage):
+    language = 'python'
+    extension = 'py'
+
     @staticmethod
     def assert_dependencies():
         pass

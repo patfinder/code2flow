@@ -94,6 +94,7 @@ class BaseLanguage(abc.ABC):
     type for different languages. In Python, it is an ast.AST.
     """
     language = 'UNKNOWN'
+    extension = 'UNKNOWN'
 
     @staticmethod
     @abc.abstractmethod

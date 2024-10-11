@@ -147,6 +147,15 @@ How to contribute
 3. **Add a language**: While dense, each language implementation is between 250-400 lines of code including comments. If you want to implement another language, the existing implementations can be your guide.
 
 
+Developers Notes
+------------------
+
+- graphviz and graphviz-dev packages are needed. Install with:
+
+```shell
+sudo apt install graphviz graphviz-dev
+```
+
 Unit tests
 ------------------
 

@@ -227,6 +227,9 @@ def run_ast_parser(filename):
 
 
 class PHP(BaseLanguage):
+    language = 'php'
+    extension = 'php'
+
     @staticmethod
     def assert_dependencies():
         """Assert that php and php-parser are installed"""
