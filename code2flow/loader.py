@@ -21,11 +21,11 @@ def load_processor(language: Language):
     """
 
     try:
-        mod = importlib.import_module(f"code2flow.processors.{language}")
+        mod = importlib.import_module(f"code2flow.processors.{language.value.lower()}")
         classes = inspect.getmembers(mod, inspect.isclass)
         for c in classes:
-            if isinstance(c, BaseLanguage):
-                return c
+            if issubclass(c[1], BaseLanguage) and c[1] != BaseLanguage:
+                return c[1]
     except Exception as ex:
         # TODO: add logger
         pass

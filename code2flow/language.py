@@ -4,36 +4,36 @@ from enum import Enum
 
 
 class Language(Enum):
-    Python = Python = 'Python',
-    JavaScript = 'JavaScript',
-    Java = 'Java',
-    CSharp = 'C#',
-    CPlusPlus = 'C++',
-    C = 'C',
-    PHP = 'PHP',
-    Swift = 'Swift',
-    Go = 'Go',
-    Ruby = 'Ruby',
-    Kotlin = 'Kotlin',
-    Rust = 'Rust',
-    TypeScript = 'TypeScript',
-    SQL = 'SQL',
-    Shell = 'Shell',
-    R = 'R',
-    Scala = 'Scala',
-    ObjectiveC = 'Objective-C',
-    Perl = 'Perl',
-    Dart = 'Dart',
-    Elixir = 'Elixir',
-    Haskell = 'Haskell',
-    Lua = 'Lua',
-    MATLAB = 'MATLAB',
-    Erlang = 'Erlang',
-    FSharp = 'FSharp',
-    VBA = 'VBA',
-    Groovy = 'Groovy',
-    VisualBasicNET = 'Visual Basic .NET',
-    Assembly = 'Assembly',
+    Python = 'Python'
+    JavaScript = 'JavaScript'
+    Java = 'Java'
+    CSharp = 'C#'
+    CPlusPlus = 'C++'
+    C = 'C'
+    PHP = 'PHP'
+    Swift = 'Swift'
+    Go = 'Go'
+    Ruby = 'Ruby'
+    Kotlin = 'Kotlin'
+    Rust = 'Rust'
+    TypeScript = 'TypeScript'
+    SQL = 'SQL'
+    Shell = 'Shell'
+    R = 'R'
+    Scala = 'Scala'
+    ObjectiveC = 'Objective-C'
+    Perl = 'Perl'
+    Dart = 'Dart'
+    Elixir = 'Elixir'
+    Haskell = 'Haskell'
+    Lua = 'Lua'
+    MATLAB = 'MATLAB'
+    Erlang = 'Erlang'
+    FSharp = 'FSharp'
+    VBA = 'VBA'
+    Groovy = 'Groovy'
+    VisualBasicNET = 'Visual Basic .NET'
+    Assembly = 'Assembly'
 
 
 # List of popular language and it file extension.
