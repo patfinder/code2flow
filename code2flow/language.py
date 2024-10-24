@@ -2,7 +2,7 @@
 # Language extension
 from enum import Enum
 
-
+# List of popular languages constant and display name
 class Language(Enum):
     Python = 'Python'
     JavaScript = 'JavaScript'
