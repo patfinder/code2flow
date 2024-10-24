@@ -79,6 +79,12 @@ There are a ton of command line options, to see them all, run:
 code2flow --help
 ```
 
+View generated graph
+------------
+
+- [xdot](https://github.com/jrfonseca/xdot.py) is an interactive viewer for graphs.
+- You can use xdot to view generated dot file.
+
 How code2flow works
 ------------
 
